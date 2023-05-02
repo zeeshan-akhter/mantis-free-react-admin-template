@@ -5,7 +5,6 @@ import { Link as RouterLink } from 'react-router-dom';
 import {
     Box,
     Button,
-    Divider,
     FormControl,
     FormHelperText,
     Grid,
@@ -23,7 +22,6 @@ import * as Yup from 'yup';
 import { Formik } from 'formik';
 
 // project import
-import FirebaseSocial from './FirebaseSocial';
 import AnimateButton from 'components/@extended/AnimateButton';
 import { strengthColor, strengthIndicator } from 'utils/password-strength';
 
@@ -123,27 +121,6 @@ const AuthRegister = () => {
                                     {touched.lastname && errors.lastname && (
                                         <FormHelperText error id="helper-text-lastname-signup">
                                             {errors.lastname}
-                                        </FormHelperText>
-                                    )}
-                                </Stack>
-                            </Grid>
-                            <Grid item xs={12}>
-                                <Stack spacing={1}>
-                                    <InputLabel htmlFor="company-signup">Company</InputLabel>
-                                    <OutlinedInput
-                                        fullWidth
-                                        error={Boolean(touched.company && errors.company)}
-                                        id="company-signup"
-                                        value={values.company}
-                                        name="company"
-                                        onBlur={handleBlur}
-                                        onChange={handleChange}
-                                        placeholder="Demo Inc."
-                                        inputProps={{}}
-                                    />
-                                    {touched.company && errors.company && (
-                                        <FormHelperText error id="helper-text-company-signup">
-                                            {errors.company}
                                         </FormHelperText>
                                     )}
                                 </Stack>
@@ -251,14 +228,6 @@ const AuthRegister = () => {
                                         Create Account
                                     </Button>
                                 </AnimateButton>
-                            </Grid>
-                            <Grid item xs={12}>
-                                <Divider>
-                                    <Typography variant="caption">Sign up with</Typography>
-                                </Divider>
-                            </Grid>
-                            <Grid item xs={12}>
-                                <FirebaseSocial />
                             </Grid>
                         </Grid>
                     </form>

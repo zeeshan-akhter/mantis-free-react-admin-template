@@ -16,16 +16,16 @@ function createData(trackingNo, name, fat, carbs, protein) {
 }
 
 const rows = [
-    createData(84564564, 'Camera Lens', 40, 2, 40570),
-    createData(98764564, 'Laptop', 300, 0, 180139),
-    createData(98756325, 'Mobile', 355, 1, 90989),
-    createData(98652366, 'Handset', 50, 1, 10239),
-    createData(13286564, 'Computer Accessories', 100, 1, 83348),
-    createData(86739658, 'TV', 99, 0, 410780),
-    createData(13256498, 'Keyboard', 125, 2, 70999),
-    createData(98753263, 'Mouse', 89, 2, 10570),
-    createData(98753275, 'Desktop', 185, 1, 98063),
-    createData(98753291, 'Chair', 100, 0, 14001)
+    createData(84564564, 'Zeeshan Akhter', 40, 2, 40570),
+    createData(98764564, 'Prakhar Pandey', 300, 0, 180139),
+    createData(98756325, 'Zaid Khan', 355, 1, 90989),
+    createData(98652366, 'Zeeshan', 50, 1, 10239),
+    createData(13286564, 'Zeeshan Zeeshan', 100, 1, 83348),
+    createData(86739658, 'Prakhar', 99, 0, 410780),
+    createData(13256498, 'Zaid', 125, 2, 70999),
+    createData(98753263, 'Zaid', 89, 2, 10570),
+    createData(98753275, 'Zaid', 185, 1, 98063),
+    createData(98753291, 'Zaid', 100, 0, 14001)
 ];
 
 function descendingComparator(a, b, orderBy) {
@@ -67,13 +67,13 @@ const headCells = [
         id: 'name',
         align: 'left',
         disablePadding: true,
-        label: 'Product Name'
+        label: 'Name'
     },
     {
         id: 'fat',
         align: 'right',
         disablePadding: false,
-        label: 'Total Order'
+        label: 'Vehicle Number'
     },
     {
         id: 'carbs',
@@ -86,7 +86,7 @@ const headCells = [
         id: 'protein',
         align: 'right',
         disablePadding: false,
-        label: 'Total Amount'
+        label: 'Phone Number'
     }
 ];
 
@@ -129,11 +129,11 @@ const OrderStatus = ({ status }) => {
             break;
         case 1:
             color = 'success';
-            title = 'Approved';
+            title = 'Entry';
             break;
         case 2:
             color = 'error';
-            title = 'Rejected';
+            title = 'Exit';
             break;
         default:
             color = 'primary';
@@ -211,7 +211,7 @@ export default function OrderTable() {
                                         <OrderStatus status={row.carbs} />
                                     </TableCell>
                                     <TableCell align="right">
-                                        <NumberFormat value={row.protein} displayType="text" thousandSeparator prefix="$" />
+                                        <NumberFormat value={row.protein} displayType="text" />
                                     </TableCell>
                                 </TableRow>
                             );
