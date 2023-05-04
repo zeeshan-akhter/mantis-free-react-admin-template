@@ -24,7 +24,7 @@ const pages = {
         },
         {
             id: 'register1',
-            title: 'Register',
+            title: 'Create Guard Account',
             type: 'item',
             url: '/register',
             icon: icons.ProfileOutlined,
