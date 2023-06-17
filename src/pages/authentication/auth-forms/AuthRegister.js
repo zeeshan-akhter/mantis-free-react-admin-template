@@ -17,7 +17,6 @@ import {
     Typography
 } from '@mui/material';
 
-// third party
 import * as Yup from 'yup';
 import { Formik } from 'formik';
 
@@ -27,8 +26,6 @@ import { strengthColor, strengthIndicator } from 'utils/password-strength';
 
 // assets
 import { EyeOutlined, EyeInvisibleOutlined } from '@ant-design/icons';
-
-// ============================|| FIREBASE - REGISTER ||============================ //
 
 const AuthRegister = () => {
     const [level, setLevel] = useState();
@@ -57,7 +54,6 @@ const AuthRegister = () => {
                     firstname: '',
                     lastname: '',
                     email: '',
-                    company: '',
                     password: '',
                     submit: null
                 }}
@@ -71,6 +67,7 @@ const AuthRegister = () => {
                     try {
                         setStatus({ success: false });
                         setSubmitting(false);
+                        console.log(values);
                     } catch (err) {
                         console.error(err);
                         setStatus({ success: false });
@@ -92,7 +89,7 @@ const AuthRegister = () => {
                                         name="firstname"
                                         onBlur={handleBlur}
                                         onChange={handleChange}
-                                        placeholder="John"
+                                        placeholder="demo"
                                         fullWidth
                                         error={Boolean(touched.firstname && errors.firstname)}
                                     />
@@ -115,7 +112,7 @@ const AuthRegister = () => {
                                         name="lastname"
                                         onBlur={handleBlur}
                                         onChange={handleChange}
-                                        placeholder="Doe"
+                                        placeholder="john"
                                         inputProps={{}}
                                     />
                                     {touched.lastname && errors.lastname && (
@@ -137,7 +134,7 @@ const AuthRegister = () => {
                                         name="email"
                                         onBlur={handleBlur}
                                         onChange={handleChange}
-                                        placeholder="demo@company.com"
+                                        placeholder="demo@ptu.com"
                                         inputProps={{}}
                                     />
                                     {touched.email && errors.email && (
